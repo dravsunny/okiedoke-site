@@ -1,0 +1,5 @@
+okiedoke.design DNS at Porkbun, before the move to GitHub Pages (2026-11-25):
+  A      okiedoke.design      216.198.79.1                          TTL 600   (Vercel)
+  ALIAS  www.okiedoke.design  0680cacb37bb68cd.vercel-dns-017.com.  TTL 600   (Vercel)
+Left untouched: MX smtp.google.com, MX send.send (Amazon SES), DMARC TXT, Google DKIM TXT, zmail DKIM TXT, SPF TXT, and the rest.
+To roll back, restore the two records above and remove the GitHub A records and the www CNAME.
