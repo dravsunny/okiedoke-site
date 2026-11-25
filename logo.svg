@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 474 484" role="img" aria-labelledby="title desc">
+  <title id="title">Okie doke logo</title>
+  <desc id="desc">A stacked O K D O monogram in coral, teal, and cream.</desc>
+  <defs>
+    <style>
+      .coral { fill: #d64228; }
+      .teal { fill: #247964; }
+      .cream { fill: #fff6e8; }
+    </style>
+  </defs>
+  <path class="coral" fill-rule="evenodd" d="M128 28a100 100 0 1 0 0 200 100 100 0 0 0 0-200Zm0 32a68 68 0 1 1 0 136 68 68 0 0 1 0-136Z" clip-rule="evenodd"/>
+  <rect class="teal" x="246" y="28" width="200" height="200" rx="30"/>
+  <path class="cream" d="M284 47h22v163h-22zM306 141 382 47h32l-78 96 85 67h-35l-66-53-14 17z"/>
+  <rect class="teal" x="28" y="242" width="200" height="200" rx="30"/>
+  <path class="cream" fill-rule="evenodd" d="M57 260h62c51 0 83 33 83 82s-32 82-83 82H57V260Zm23 21v122h38c38 0 61-24 61-61s-23-61-61-61H80Z" clip-rule="evenodd"/>
+  <path class="coral" fill-rule="evenodd" d="M346 256a100 100 0 1 0 0 200 100 100 0 0 0 0-200Zm0 32a68 68 0 1 1 0 136 68 68 0 0 1 0-136Z" clip-rule="evenodd"/>
+</svg>

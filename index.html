@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Okiedoke — Software and websites, owned end to end</title>
+<meta name="description" content="Okiedoke is a migrant-first software house and design studio. Working first versions in a week, small-business websites from $500, and support after launch.">
+<link rel="icon" href="logo.svg" type="image/svg+xml">
+<meta property="og:title" content="Okiedoke — Software and websites, owned end to end">
+<meta property="og:description" content="A working first version in a week. Websites for local businesses from $500.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#03110e; --ink-2:#0b1d19; --cream:#f8f2e8; --paper:#fffaf2; --sand:#ecd3b6;
+  --coral:#c8553d; --coral-2:#d64228; --teal:#247964; --muted:#58655f; --line:#e2d8c8;
+  --display:"Fraunces", Georgia, serif; --body:"Figtree", system-ui, sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font:17px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-.02em;line-height:1.05;margin:0}
+.eyebrow{font:600 13px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--coral)}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--ink) 92%,transparent);backdrop-filter:blur(8px);color:var(--cream)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:600 19px var(--display)}
+.brand img{width:30px;height:30px}
+.nav nav{display:flex;gap:26px;font-size:15px}
+.nav nav a{text-decoration:none;opacity:.85}.nav nav a:hover{opacity:1}
+.btn{display:inline-block;padding:13px 22px;border-radius:999px;background:var(--coral);color:#fff;text-decoration:none;font-weight:600;font-size:16px;transition:transform .15s,background .15s}
+.btn:hover{background:var(--coral-2);transform:translateY(-1px)}
+.btn.ghost{background:transparent;border:1.5px solid currentColor}
+.nav .btn{padding:9px 16px;font-size:14px}
+
+/* hero */
+.hero{background:var(--ink);color:var(--cream);padding:96px 0 110px;position:relative;overflow:hidden}
+.hero h1{font-size:clamp(48px,8vw,96px);max-width:11ch}
+.hero .lede{font:500 clamp(22px,2.6vw,30px)/1.3 var(--display);color:#e7866d;margin:26px 0 0}
+.hero p.sub{max-width:560px;color:#c9d1cc;margin:22px 0 34px}
+.hero .ctas{display:flex;gap:14px;flex-wrap:wrap}
+.orb{position:absolute;border-radius:50%;background:#33201a}
+.orb.a{width:240px;height:240px;right:8%;top:70px}
+.orb.b{width:120px;height:120px;right:26%;bottom:-40px;background:var(--teal);opacity:.35}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stats div{padding:34px 28px;border-left:1px solid var(--line)}
+.stats div:first-child{border-left:0}
+.stats b{display:block;font:600 64px/1 var(--display);color:var(--coral)}
+.stats strong{display:block;font:600 26px var(--display);margin:8px 0 4px}
+.stats span{color:var(--muted)}
+
+section{padding:96px 0}
+.intro h2{font-size:clamp(40px,6vw,72px)}
+.intro .wrap > p:not(.eyebrow){font-size:21px;color:var(--muted);max-width:760px;margin:20px 0 48px}
+.intro .wrap > .eyebrow{margin:0 0 14px}
+.offer p{color:var(--muted);margin:0}
+.offer.dark p{color:#c9d1cc}
+
+/* offers */
+.offers{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.offer{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:34px}
+.offer.dark{background:var(--ink-2);color:var(--cream);border-color:var(--ink-2)}
+.offer h3{font-size:32px;margin:10px 0 12px}
+.offer .price{font:600 44px/1 var(--display);margin:18px 0 6px}
+.offer .price small{font:500 16px var(--body);opacity:.7}
+.offer ul{padding-left:18px;margin:16px 0 0}.offer li{margin:6px 0}
+.offer.dark .eyebrow{color:#e7866d}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line);margin-top:40px}
+.step{padding:28px 22px 10px;border-left:1px solid var(--line)}
+.step:first-child{border-left:0;padding-left:0}
+.step i{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--sand);color:#7a3424;font:600 16px var(--body);font-style:normal}
+.step.on i{background:var(--coral);color:#fff}
+.step h3{font-size:28px;margin:18px 0 8px}
+.step p{color:var(--muted);margin:0;font-size:16px}
+
+/* care */
+.care{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+.plan{border:1px solid var(--line);border-radius:16px;padding:28px;background:var(--cream)}
+.plan.rec{background:#e6efe9;border-color:#bcd3c7}
+.plan h3{font-size:26px}.plan .p{font:600 30px var(--display);color:var(--coral);margin:8px 0 14px}
+.plan .p small{font:500 15px var(--body);color:var(--muted)}
+.plan ul{margin:0;padding-left:18px;color:var(--muted);font-size:15.5px}
+.tag{display:inline-block;font:600 11px var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:8px}
+
+/* who */
+.who{background:var(--ink);color:var(--cream)}
+.who .grid{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center}
+.who h2{font-size:clamp(44px,6vw,78px)}
+.card{border-radius:16px;padding:30px;margin-bottom:18px}
+.card.sand{background:var(--sand);color:var(--ink)}.card.paper{background:var(--paper);color:var(--ink)}
+.card h3{font-size:32px;color:var(--coral);margin-bottom:8px}
+.card p{margin:0}
+.values{display:grid;grid-template-columns:repeat(3,1fr);margin-top:72px;border-top:1px solid #23332e}
+.values div{padding:28px 24px 0;border-left:1px solid #23332e}.values div:first-child{border-left:0;padding-left:0}
+.values span{display:inline-block;background:#2a1d17;color:var(--sand);border-radius:999px;padding:5px 14px;font-size:14px;font-weight:600;margin-bottom:12px}
+.values p{color:#c9d1cc;margin:0}
+
+/* contact */
+.contact{text-align:left}
+.contact h2{font-size:clamp(48px,7vw,88px)}
+.contact p{font-size:21px;color:var(--muted);max-width:640px;margin:20px 0 32px}
+.contact .mail{font:600 clamp(24px,3vw,34px) var(--display);color:var(--coral);text-decoration:none;border-bottom:2px solid currentColor}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+@media (max-width:900px){
+  .nav nav{display:none}
+  .stats,.offers,.plans,.values,.who .grid{grid-template-columns:1fr}
+  .stats div,.values div{border-left:0;border-top:1px solid var(--line);padding-left:0}
+  .values div{border-top-color:#23332e}
+  .stats div:first-child,.values div:first-child{border-top:0}
+  .steps{grid-template-columns:1fr}
+  .step{border-left:0;border-top:1px solid var(--line);padding:22px 0}
+  .step:first-child{border-top:0}
+  .orb.a{width:140px;height:140px;right:-30px;top:30px}
+  section{padding:72px 0}.hero{padding:72px 0 84px}
+}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto;transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="logo.svg" alt="">Okiedoke</a>
+    <nav>
+      <a href="#work">What we build</a><a href="#process">Process</a><a href="#care">Care plans</a><a href="#about">About</a>
+    </nav>
+    <a class="btn" href="#contact">Start a project</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <span class="orb a" aria-hidden="true"></span><span class="orb b" aria-hidden="true"></span>
+    <div class="wrap" style="position:relative">
+      <h1>Complex software, owned end to end.</h1>
+      <p class="lede">First working version in a week.</p>
+      <p class="sub">A migrant-first software house and design studio for founders, operators and local businesses who need a real product, not a handoff chain.</p>
+      <div class="ctas">
+        <a class="btn" href="#contact">Tell us what you're building</a>
+        <a class="btn ghost" href="#work">See what we build</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="stats">
+      <div><b>7</b><strong>days</strong><span>to a clickable first version you can test with real users.</span></div>
+      <div><b>1</b><strong>team</strong><span>owning product, UX, engineering, launch and support under one roof.</span></div>
+      <div><b>$500</b><strong>to start</strong><span>a fixed base price, with scope agreed before anything expands.</span></div>
+    </div>
+  </div>
+
+  <section class="intro" id="work">
+    <div class="wrap">
+      <p class="eyebrow">What we build</p>
+      <h2>Two ways to work with us.</h2>
+      <p>Whether you're testing a product idea or need your business to look as good online as it is in person, you'll work directly with the people doing the work.</p>
+      <div class="offers">
+        <article class="offer dark">
+          <span class="eyebrow">For founders &amp; operators</span>
+          <h3>MVP in 7 days</h3>
+          <p>We map the problem, scope the MVP and ship a usable first version: a working product, not a static mockup.</p>
+          <div class="price">$500 <small>base price</small></div>
+          <ul><li>Discovery, UX and engineering in one team</li><li>Working v1 in about a week</li><li>Scope, complexity and support made explicit before they grow</li></ul>
+        </article>
+        <article class="offer">
+          <span class="eyebrow">For local businesses</span>
+          <h3>A website that works on every phone</h3>
+          <p>A polished, fast site with your services, service area and a simple way for customers to call or ask for a quote.</p>
+          <div class="price">$500 <small>fixed fee</small></div>
+          <ul><li>Up to five pages, built mobile-first</li><li>Domain, HTTPS, Google Search Console and basic SEO set up</li><li>Live in 5–7 business days, with 14 days of fixes included</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" style="padding-top:0">
+    <div class="wrap">
+      <p class="eyebrow">Process</p>
+      <h2 style="font-size:clamp(38px,5vw,60px);max-width:14ch">A short path from vague idea to working product.</h2>
+      <div class="steps">
+        <div class="step"><i>1</i><h3>Discover</h3><p>Map the problem, scope the MVP, and agree on what done means.</p></div>
+        <div class="step"><i>2</i><h3>Design</h3><p>Shape the product and UX alongside the engineering plan.</p></div>
+        <div class="step on"><i>3</i><h3>Build</h3><p>Ship a usable v1 in seven days, not a static mockup.</p></div>
+        <div class="step"><i>4</i><h3>Launch</h3><p>Put it in front of users and capture the next round of evidence.</p></div>
+        <div class="step"><i>5</i><h3>Support</h3><p>Improve, fix and scale after launch without dropping off.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="care" id="care">
+    <div class="wrap">
+      <p class="eyebrow">Optional care plans</p>
+      <h2 style="font-size:clamp(38px,5vw,60px)">Support after launch, only if it's useful.</h2>
+      <div class="plans">
+        <div class="plan"><h3>Basic Care</h3><div class="p">$99<small>/month</small></div><ul><li>Platform and system updates</li><li>Backups and security checks</li><li>Uptime monitoring</li><li>Basic fixes</li></ul></div>
+        <div class="plan rec"><span class="tag">Recommended</span><h3>Website Care</h3><div class="p">$199<small>/month</small></div><ul><li>Everything in Basic</li><li>Small content changes, up to 1 hour/month</li><li>Form, broken-page and performance checks</li><li>Priority support and a monthly report</li></ul></div>
+        <div class="plan"><h3>Growth Care</h3><div class="p">$399<small>/month</small></div><ul><li>Everything in Website Care</li><li>Up to 3 hours of changes monthly</li><li>Speed, SEO and conversion improvements</li><li>Analytics monitoring and faster turnaround</li></ul></div>
+      </div>
+      <p style="color:var(--muted);margin:22px 0 0;font-size:15px">No monthly commitment is needed to complete a project. Prices are in USD, and AUD pricing is available for Australian clients.</p>
+    </div>
+  </section>
+
+  <section class="who" id="about">
+    <div class="wrap">
+      <div class="grid">
+        <div><p class="eyebrow" style="color:#e7866d">Who we are</p><h2>Talent is everywhere. Opportunity is not.</h2></div>
+        <div>
+          <div class="card sand"><h3>Migrant-first, hands-on</h3><p>The studio is built by migrants and run by the people doing the work. You get direct accountability, not a chain of handoffs.</p></div>
+          <div class="card paper"><h3>Built to last</h3><p>We don't disappear at launch. We stay close enough to improve the product as your use case sharpens.</p></div>
+        </div>
+      </div>
+      <div class="values">
+        <div><span>Mission</span><p>Build complex software quickly and open real doors for talented people building new lives.</p></div>
+        <div><span>Vision</span><p>A studio where world-class product work and real opportunity go hand in hand.</p></div>
+        <div><span>Values</span><p>Ownership, speed with care, people first, and honesty in the work and the numbers.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <p class="eyebrow">Get in touch</p>
+      <h2>Let's build yours.</h2>
+      <p>Tell us what you're working on. We'll take the hard part off your plate and get a real first version into your hands. Exact numbers are worked out together after a short call.</p>
+      <a class="mail" href="mailto:hello@okiedoke.design?subject=New%20project">hello@okiedoke.design</a>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap"><span>© 2026 Okiedoke</span><span>okiedoke.design</span></div></footer>
+</body>
+</html>
